@@ -142,7 +142,7 @@ function App() {
       >
         {API_KEY ? (
           <>
-            <Heading>Lay-Judge</Heading>
+            <Heading>Auto-Judge</Heading>
             <Text mt={2}>A half decent judge at your fingertips!</Text>
 
             <FormControl mt={4}>

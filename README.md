@@ -1,7 +1,7 @@
 <div align="center">
-  <h1 align="center">lay-judge</h1>
+  <h1 align="center">auto-judge</h1>
   <p align="center">
-    Automating lay judges w/ LLMs.
+    A half decent parli judge at your fingertips!
   </p>
 </div>
 
@@ -10,7 +10,7 @@
 ## Running Locally
 
 ```sh
-git clone https://github.com/transmissions11/lay-judge.git
+git clone https://github.com/transmissions11/auto-judge.git
 npm install
 npm run dev
 ```
