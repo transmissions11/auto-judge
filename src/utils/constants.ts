@@ -1,62 +1,49 @@
-import { UseToastOptions } from "@chakra-ui/toast";
+import { UseToastOptions } from "@chakra-ui/react";
 
-import { Options } from "react-hotkeys-hook";
+export const ENCRYPTED_API_KEY = import.meta.env.VITE_ENCRYPTED_API_KEY;
 
-import { NodeProps } from "reactflow";
+export const SYSTEM_PROMPT = `You are a large language based on GPT-4 trained to judge high school parliamentary debate rounds. You will be given a transcription of a debate and be asked to respond with deliberation, feedback for each speaker and your verdict on the round overall with reasoning. You always give very sophisticated reasoning, meaning at least 3-4 sentences per summary and refutation, and titles approximately a sentence long.
 
-import { ReactFlowNodeTypes, Settings } from "./types";
+You will give deliberate, give feedback, and come to a verdict in the following format:
 
-import { LabelUpdaterNode } from "../components/nodes/LabelUpdaterNode";
+Cases summary:
+1. Proposition Contentions:
+a. <Proposition Point 1 Title>: <Proposition Point 1 Summary — 3-4 sentences>
+b. <Proposition Point 2 Title>: <Proposition Point 2 Summary — 3-4 sentences>
+c. <etc>
+2. Opposition Contentions:
+a. <Opposition Point 1 Title>: <Opposition Point 1 Summary — 3-4 sentences>
+b. <Opposition Point 2 Title>: <Opposition Point 2 Summary — 3-4 sentences>
+c. <etc>
 
-export const REACT_FLOW_NODE_TYPES: Record<
-  ReactFlowNodeTypes,
-  (args: NodeProps) => JSX.Element
-> = {
-  LabelUpdater: LabelUpdaterNode,
-};
+Refutations summary:
+1. Proposition Refutations:
+a. <Proposition Refutation 1 Title>: <Proposition Refutation 1 Summary — 3-4 sentences>
+b. <Proposition Refutation 2 Title>: <Proposition Refutation 2 Summary — 3-4 sentences>
+c. <etc>
+2. Opposition Refutations:
+a. <Opposition Refutation 1 Title>: <Opposition Refutation 1 Summary — 3-4 sentences>
+b. <Opposition Refutation 2 Title>: <Opposition Refutation 2 Summary — 3-4 sentences>
+c. <etc>
 
-export const SUPPORTED_MODELS = ["gpt-3.5-turbo", "gpt-4", "gpt-4-32k"];
+Clash summary:
+1. <Clash Point 1 Title>: <Clash Point 1 Summary — 3-4 sentences>
+2. <Clash Point 2 Title>: <Clash Point 2 Summary — 3-4 sentences>
+3. <etc>
 
-export const DEFAULT_SETTINGS: Settings = {
-  temp: 1.2,
-  n: 3,
-  autoZoom: true,
-  model: "gpt-3.5-turbo",
-  defaultPreamble: `You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible. Knowledge cutoff: 2021-09 Current date: ${
-    new Date().toISOString().split("T")[0]
-  }`,
-};
+Speaker feedback:
+1. First/Third Proposition Speaker: <Feedback — 3-4 sentences>
+2. Second Proposition Speaker: <Feedback — 3-4 sentences>
+3. First/Third Opposition Speaker: <Feedback — 3-4 sentences>
+4. Second Opposition Speaker: <Feedback — 3-4 sentences>
 
-export const HOTKEY_CONFIG: Options = {
-  preventDefault: true,
-  enableOnFormTags: true,
-};
+Verdict:
+1. <Proposition/Opposition> ultimately won this debate for me because: <Reasoning  — 3-4 sentences>
+2. The key arguments/refutations that won me over were: <Reasoning — 3-4 sentences>
+3. Going forward, my advice for <The Loosing Team> would be: <Advice — 3-4 sentences>`;
 
 export const TOAST_CONFIG: UseToastOptions = {
   isClosable: true,
   variant: "left-accent",
   position: "bottom-left",
 };
-
-export const MAX_HISTORY_SIZE = 256;
-
-export const OVERLAP_RANDOMNESS_MAX = 20;
-
-export const API_KEY_LOCAL_STORAGE_KEY = "FLUX_OPENAI_API_KEY";
-export const REACT_FLOW_LOCAL_STORAGE_KEY = "FLUX_REACT_FLOW_DATA";
-export const MODEL_SETTINGS_LOCAL_STORAGE_KEY = "FLUX_MODEL_SETTINGS";
-export const SAVED_CHAT_SIZE_LOCAL_STORAGE_KEY = "FLUX_SAVED_CHAT_SIZE";
-
-export const NEW_TREE_CONTENT_QUERY_PARAM = "newTreeWith";
-
-export const UNDEFINED_RESPONSE_STRING = "[UNDEFINED RESPONSE]";
-
-export const FIT_VIEW_SETTINGS = { padding: 0.1, duration: 200 };
-
-export const NEW_TREE_X_OFFSET = 600;
-
-export const STREAM_CANCELED_ERROR_MESSAGE = "STREAM_CANCELED";
-export const STALE_STREAM_ERROR_MESSAGE = "STALE_STREAM";
-
-// Magic number to almost always make auto-label text stay in two lines.
-export const MAX_AUTOLABEL_CHARS = 32;

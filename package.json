@@ -1,5 +1,5 @@
 {
-  "name": "flux",
+  "name": "lay-judge",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -27,6 +27,7 @@
     "react-textarea-autosize": "^8.4.0",
     "reactflow": "^11.7.0",
     "rehype-highlight": "^6.0.0",
+    "simple-crypto-js": "^3.0.1",
     "yield-stream": "^2.3.0"
   },
   "devDependencies": {
