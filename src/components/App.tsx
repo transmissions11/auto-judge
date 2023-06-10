@@ -143,7 +143,7 @@ function App() {
         {API_KEY ? (
           <>
             <Heading>Auto-Judge</Heading>
-            <Text mt={2}>A half decent judge at your fingertips!</Text>
+            <Text mt={2}>A half decent parli judge at your fingertips!</Text>
 
             <FormControl mt={4}>
               <FormLabel>Upload audio file</FormLabel>
