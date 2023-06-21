@@ -41,7 +41,7 @@ function App() {
       const stream = await OpenAI(
         "chat",
         {
-          model: "gpt-4-32k",
+          model: "gpt-4-32k-0613",
           temperature: 0.7,
           messages: [
             {
